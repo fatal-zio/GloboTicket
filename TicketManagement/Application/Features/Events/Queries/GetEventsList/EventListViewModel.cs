@@ -1,4 +1,4 @@
-﻿namespace Application.Features.Events
+﻿namespace Application.Features.Events.Queries.GetEventsList
 {
     public class EventListViewModel
     {

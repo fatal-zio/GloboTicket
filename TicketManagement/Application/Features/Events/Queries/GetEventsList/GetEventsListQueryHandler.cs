@@ -3,7 +3,7 @@ using AutoMapper;
 using Domain.Entities;
 using MediatR;
 
-namespace Application.Features.Events
+namespace Application.Features.Events.Queries.GetEventsList
 {
     public class GetEventsListQueryHandler(IAsyncRepository<Event> eventRepository, IMapper mapper) : IRequestHandler<GetEventsListQuery, List<EventListViewModel>>
     {
