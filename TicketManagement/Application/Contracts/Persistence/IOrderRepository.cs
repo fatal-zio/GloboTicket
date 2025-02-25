@@ -2,7 +2,7 @@
 
 namespace Application.Contracts.Persistence
 {
-    public interface IOrderReposotory : IAsyncRepository<Order>
+    public interface IOrderRepository : IAsyncRepository<Order>
     {
 
     }
