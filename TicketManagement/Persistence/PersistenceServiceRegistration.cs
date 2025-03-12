@@ -11,7 +11,7 @@ namespace Persistence
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<GloboTicketDbContext>(options =>
-                options.UseSqlite(configuration.GetConnectionString("GloboTicketTicketManagementConnectionString")));
+                options.UseSqlite(configuration.GetConnectionString("ConnectionStrings:GloboTicketTicketManagementConnectionString")));
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
 

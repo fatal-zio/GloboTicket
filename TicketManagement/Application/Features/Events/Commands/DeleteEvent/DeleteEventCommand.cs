@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Application.Features.Categories.Commands.DeleteEvent
+namespace Application.Features.Events.Commands.DeleteEvent
 {
     public class DeleteEventCommand : IRequest
     {

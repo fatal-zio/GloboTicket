@@ -3,9 +3,10 @@ using AutoMapper;
 using Domain.Entities;
 using MediatR;
 
-namespace Application.Features.Categories.Commands.DeleteEvent
+
+namespace Application.Features.Events.Commands.DeleteEvent
 {
-    public class DeleteEventCommandHandler(IAsyncRepository<Event> eventRepository, IMapper mapper) : IRequestHandler<DeleteEventCommand>
+    public class DeleteEventCommandHandler(IMapper mapper, IAsyncRepository<Event> eventRepository) : IRequestHandler<DeleteEventCommand>
     {
         private readonly IAsyncRepository<Event> _eventRepository = eventRepository;
         private readonly IMapper _mapper = mapper;
@@ -13,6 +14,7 @@ namespace Application.Features.Categories.Commands.DeleteEvent
         public async Task Handle(DeleteEventCommand request, CancellationToken cancellationToken)
         {
             var eventToDelete = await _eventRepository.GetByIdAsync(request.EventId);
+
             await _eventRepository.DeleteAsync(eventToDelete);
         }
     }

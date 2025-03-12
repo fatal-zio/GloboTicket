@@ -1,5 +1,5 @@
-﻿using Application.Features.Categories.Commands.CreateEvent;
-using Application.Features.Categories.Commands.UpdateEvent;
+﻿using Application.Features.Events.Commands.CreateEvent;
+using Application.Features.Events.Commands.UpdateEvent;
 using Application.Features.Categories.Queries.GetCategoriesList;
 using Application.Features.Categories.Queries.GetCategoriesListWithEvents;
 using Application.Features.Events.Queries.GetEventDetail;
