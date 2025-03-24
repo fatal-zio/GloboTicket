@@ -15,12 +15,12 @@ namespace Application.Features.Categories.Commands.CreateCategory
             var createCategoryCommandResponse = new CreateCategoryCommandResponse();
 
             var validator = new CreateCategoryCommandValidator();
-            var validationResult = await validator.ValidateAsync(request);
+            var validationResult = await validator.ValidateAsync(request, cancellationToken);
 
             if (validationResult.Errors.Count > 0)
             {
                 createCategoryCommandResponse.Success = false;
-                createCategoryCommandResponse.ValidationErrors = new List<string>();
+                createCategoryCommandResponse.ValidationErrors = [];
 
                 foreach (var error in validationResult.Errors)
                 {

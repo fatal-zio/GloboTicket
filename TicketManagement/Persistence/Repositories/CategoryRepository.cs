@@ -8,7 +8,7 @@ namespace Persistence.Repositories
     {
         public async Task<List<Category>> GetCategoriesWithEvents(bool includeHistory)
         {
-            return includeHistory ? 
+            return includeHistory ?
                 await _dbContext.Categories.Include(x => x.Events).ToListAsync() :
                 await _dbContext.Categories.Include(x => x.Events.Where(e => e.Date < DateTime.Today)).ToListAsync();
         }
